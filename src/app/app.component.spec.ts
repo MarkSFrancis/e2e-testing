@@ -19,4 +19,11 @@ describe('AppComponent', () => {
     const compiled = helper.html;
     expect(compiled.querySelector('h1').textContent).toContain('TODO List');
   });
+
+  it('should push task onto tasks when adding task', () => {
+    helper.component.newTaskName = 'Test Task';
+    helper.component.addTask();
+
+    helper.component.tasks.length === 1;
+  })
 });

@@ -5,7 +5,24 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  async getTasks(): Promise<string[]> {
+    const allTasks = await element.all(by.css('.tasks li'));
+    const taskContents: string[] = [];
+    for (let task of allTasks) {
+      taskContents.push(await task.getText());
+    }
+
+    return taskContents;
+  }
+
+  async addTask(text: string) {
+    const addElement = element(by.css('input[name="new-task-name"]'));
+    await addElement.clear();
+    await addElement.sendKeys(text);
+
+    const addButtonElement = element(by.css('a.btn-primary'));
+    addButtonElement.click();
+
+    await setTimeout(() => { }, 0);
   }
 }

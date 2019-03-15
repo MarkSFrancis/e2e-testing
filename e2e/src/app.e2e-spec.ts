@@ -7,8 +7,11 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should add task when button clicked', async () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to e2e-testing!');
+    await page.addTask('Sample Task');
+    const tasks = await page.getTasks();
+    expect(tasks.length > 0).toBeTruthy();
+    expect(tasks[0]).toBe('Sample Task');
   });
 });

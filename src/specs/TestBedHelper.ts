@@ -21,27 +21,23 @@ export class TestBedHelper<T> {
         imports: me.modules,
         declarations: me.components
       }).compileComponents();
+
+      me.initFixture();
     }
   };
 
-  private _fixtureCreated: boolean;
   private _fixture: ComponentFixture<T>;
 
   get component(): T {
-    this.initFixture();
     return this._fixture.debugElement.componentInstance;
   }
 
   get html(): HTMLElement {
-    this.initFixture();
-
+    this._fixture.detectChanges();
     return this._fixture.debugElement.nativeElement;
   }
 
   private initFixture(): void {
-    if (!this._fixtureCreated) {
-      this._fixture = TestBed.createComponent(this.componentUnderTest);
-      this._fixture.detectChanges();
-    }
+    this._fixture = TestBed.createComponent(this.componentUnderTest);
   }
 }
