@@ -1,35 +1,22 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { TestBedHelper } from 'src/specs/TestBedHelper';
+
+const helper = new TestBedHelper(AppComponent);
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+  beforeEach(helper.setup());
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = helper.component;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'e2e-testing'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('e2e-testing');
+  it(`should have as title 'TODO'`, () => {
+    expect(helper.component.title).toEqual('TODO');
   });
 
   it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to e2e-testing!');
+    const compiled = helper.html;
+    expect(compiled.querySelector('h1').textContent).toContain('TODO List');
   });
 });
