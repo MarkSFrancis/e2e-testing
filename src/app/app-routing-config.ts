@@ -3,15 +3,21 @@ import { TodoListComponent } from './todo/todo-list.component';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { WelcomeComponent } from './welcome/welcome.component';
 
-const appRoutes: Routes = [
-  {
-    path: 'todo',
-    component: TodoListComponent
-  },
+export const appRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: WelcomeComponent
+    component: WelcomeComponent,
+    data: {
+      text: 'Home'
+    }
+  },
+  {
+    path: 'todo',
+    component: TodoListComponent,
+    data: {
+      text: 'Todo'
+    }
   }
 ];
 

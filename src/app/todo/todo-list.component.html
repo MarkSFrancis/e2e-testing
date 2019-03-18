@@ -3,8 +3,8 @@
     <h2>My Tasks</h2>
   </div>
   <div class="card-body">
-    <p class="card-text" *ngIf="tasks && tasks.length === 0">Your todo list is empty! Add your first task below</p>
-    <ul *ngIf="tasks && tasks.length > 0" class="tasks list-group list-group-flush">
+    <p class="card-text" *ngIf="!hasTasks">Your todo list is empty! Add your first task below</p>
+    <ul *ngIf="hasTasks" class="tasks list-group list-group-flush">
       <li class="list-group-item" *ngFor="let task of tasks" [attr.task-id]="task">
         <div class="row">
           <div class="col task-text">

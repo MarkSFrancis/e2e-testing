@@ -1,33 +1,34 @@
 import { Component } from '@angular/core';
+import { TodoService } from 'src/services/todo.service';
 
 @Component({
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent {
-  tasks: string[] = [];
   newTaskName = '';
 
+  get hasTasks(): boolean {
+    return this.todoService.tasks.length > 0;
+  }
+
+  get tasks(): string[] {
+    return this.todoService.tasks;
+  }
+
+  constructor(public todoService: TodoService) {
+  }
+
   add() {
-    this.tasks.push(this.newTaskName);
+    this.todoService.add(this.newTaskName);
     this.newTaskName = '';
 
     return false;
   }
 
   delete(taskToRemove: string) {
-    let found = false;
-    this.tasks = this.tasks.filter(t => {
-      if (found) {
-        return true;
-      }
+    this.todoService.delete(taskToRemove);
 
-      if (t === taskToRemove) {
-        found = true;
-        return false;
-      }
-
-      return true;
-    });
+    return false;
   }
 }
