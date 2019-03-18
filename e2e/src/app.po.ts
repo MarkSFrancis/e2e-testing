@@ -34,4 +34,11 @@ export class AppPage {
     const addButtonElement = element(by.css('a.btn-primary'));
     await addButtonElement.click();
   }
+
+  async tasksHasTextInsteadOfTasks(): Promise<any> {
+    const addElement = element(by.css('.card-text'));
+    const text = await addElement.getText();
+
+    return text && text.length > 0;
+  }
 }
