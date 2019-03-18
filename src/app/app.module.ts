@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, TypeDecorator } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodoListComponent } from './todo/todo-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 export const coreAppModule = {
   imports: [
@@ -14,7 +16,9 @@ export const coreAppModule = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoListComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

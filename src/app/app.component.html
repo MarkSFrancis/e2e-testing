@@ -1,36 +1,6 @@
 <div class="container" style="margin-top: 30px;">
   <h1 class="page-title">
-    TODO List
+    {{ title }} App
   </h1>
-  <div class="card">
-    <div class="card-header">
-      <h2>My Tasks</h2>
-    </div>
-    <div class="card-body">
-      <p class="card-text" *ngIf="tasks && tasks.length === 0">Your todo list is empty! Add your first task below</p>
-      <ul *ngIf="tasks && tasks.length > 0" class="tasks list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let task of tasks" [attr.task-id]="task">
-          <div class="row">
-            <div class="col task-text">
-              {{ task }}
-            </div>
-            <div class="col-auto">
-              <a href="#" class="btn btn-danger" (click)="delete(task)">Delete</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="card-footer">
-      <div class="row">
-        <div class="col">
-          <input class="form-control" name="new-task-name" type=text [(ngModel)]="newTaskName" placeholder="New Task" />
-        </div>
-        <div class="col-auto">
-          <a href="#" class="btn btn-primary" (click)="add()">Add Task</a>
-        </div>
-      </div>
-    </div>
-  </div>
   <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,15 @@
+.tasks li {
+  &:hover {
+    background-color: #f8f9fa;
+  }
+  .task-text {
+    align-self: center;
+  }
+}
+
+.card-body {
+  padding: 0;
+  .card-text {
+    margin: 1.25rem;
+  }
+}

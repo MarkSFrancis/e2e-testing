@@ -1,10 +1,10 @@
-import { AppPage } from './app.po';
+import { TodoPage } from './todo.po';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('E2E Testing - Todo', () => {
+  let page: TodoPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new TodoPage();
   });
 
   it('should add task when button clicked', async () => {
