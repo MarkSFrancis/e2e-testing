@@ -21,8 +21,6 @@ export class AppPage {
     await addElement.sendKeys(text);
 
     const addButtonElement = element(by.css('a.btn-primary'));
-    addButtonElement.click();
-
-    await setTimeout(() => { }, 0);
+    await addButtonElement.click();
   }
 }
