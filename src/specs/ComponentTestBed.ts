@@ -3,7 +3,7 @@ import { Type } from '@angular/core';
 import { TestingModules } from './testing-modules';
 import { coreAppModule } from 'src/app/app.module';
 
-export class TestBedHelper<T> {
+export class ComponentTestBed<T> {
   private providers: any[];
 
   constructor(public componentUnderTest: Type<T>, private modules?: any[], private components?: any[]) {

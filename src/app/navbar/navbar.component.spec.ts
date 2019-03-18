@@ -1,7 +1,7 @@
-import { TestBedHelper } from 'src/specs/TestBedHelper';
+import { ComponentTestBed } from 'src/specs/ComponentTestBed';
 import { NavbarComponent } from './navbar.component';
 
-const helper = new TestBedHelper(NavbarComponent);
+const helper = new ComponentTestBed(NavbarComponent);
 
 describe('NavbarComponent', () => {
   beforeEach(helper.setup());

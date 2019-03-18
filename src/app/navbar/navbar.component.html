@@ -9,7 +9,7 @@
       <li *ngFor="let link of links" class="nav-item">
         <a class="nav-link" [routerLink]="link.path" [routerLinkActive]="'active'"
           [routerLinkActiveOptions]="{exact: true}">
-          {{ link.data.text }}</a>
+          {{ link.data && link.data.text ? link.data.text : link.path }}</a>
       </li>
     </ul>
   </div>

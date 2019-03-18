@@ -1,8 +1,7 @@
 import { TodoListComponent } from './todo-list.component';
-import { TestBedHelper } from 'src/specs/TestBedHelper';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { ComponentTestBed } from 'src/specs/ComponentTestBed';
 
-const helper = new TestBedHelper(TodoListComponent, undefined);
+const helper = new ComponentTestBed(TodoListComponent);
 
 describe('TodoListComponent', () => {
   beforeEach(helper.setup());
@@ -26,13 +25,5 @@ describe('TodoListComponent', () => {
 
     expect(helper.component.tasks.length).toBe(1);
     expect(helper.component.tasks[0]).toBe('Test Task');
-  });
-
-  it('should remove first matched task from tasks when deleting task', () => {
-    helper.component.todoService.tasks = ['Test Task', 'Sample', 'Test Task'];
-    helper.component.delete('Test Task');
-
-    expect(helper.component.tasks.length).toBe(2);
-    expect(helper.component.tasks[0]).toBe('Sample');
   });
 });

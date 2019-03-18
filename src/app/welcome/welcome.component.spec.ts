@@ -1,7 +1,7 @@
 import { WelcomeComponent } from './welcome.component';
-import { TestBedHelper } from 'src/specs/TestBedHelper';
+import { ComponentTestBed } from 'src/specs/ComponentTestBed';
 
-const helper = new TestBedHelper(WelcomeComponent);
+const helper = new ComponentTestBed(WelcomeComponent);
 
 describe('WelcomeComponent', () => {
   beforeEach(helper.setup());
