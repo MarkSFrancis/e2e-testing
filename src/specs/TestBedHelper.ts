@@ -1,16 +1,16 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { Type } from '@angular/core';
+import { TestingModules } from './testing-modules';
 
 export class TestBedHelper<T> {
   constructor(public componentUnderTest: Type<T>, private modules?: any[], private components?: any[]) {
     if (!this.modules) {
-      this.modules = [];
+      this.modules = TestingModules;
     }
     if (!this.components) {
       this.components = [];
     }
-    this.modules.push(RouterTestingModule);
+
     this.components.push(componentUnderTest);
   }
 
