@@ -9,7 +9,7 @@
       {{ task }}
     </li>
   </ul>
-  <input name="new-task-name" type=text [(value)]="newTaskName"/>
+  <input name="new-task-name" type=text [(ngModel)]="newTaskName"/>
   <a href="#" class="btn btn-primary" (click)="addTask()">Add Task</a>
   <router-outlet></router-outlet>
 </div>

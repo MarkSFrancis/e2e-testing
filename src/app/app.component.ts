@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'TODO';
 
   tasks: string[] = [];
-  newTaskName: string;
+  newTaskName = '';
 
   addTask() {
     this.tasks.push(this.newTaskName);
