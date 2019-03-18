@@ -9,9 +9,21 @@ describe('workspace-project App', () => {
 
   it('should add task when button clicked', async () => {
     page.navigateTo();
+    
     await page.addTask('Sample Task');
+
     const tasks = await page.getTasks();
     expect(tasks.length > 0).toBeTruthy();
     expect(tasks[0]).toBe('Sample Task');
+  });
+
+  it('should remove task when button clicked', async () => {
+    page.navigateTo();
+    await page.addTask('Sample Task');
+
+    await page.removeTask('Sample Task');
+
+    const tasks = await page.getTasks();
+    expect(tasks.length === 0).toBeTruthy();
   });
 });

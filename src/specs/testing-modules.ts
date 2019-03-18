@@ -1,7 +1,7 @@
 import { RouterTestingModule } from '@angular/router/testing';
-import { FormsModule } from '@angular/forms';
+import { coreAppModule } from 'src/app/app.module';
 
 export const TestingModules = [
   RouterTestingModule,
-  FormsModule
+  ...coreAppModule.imports
 ]
