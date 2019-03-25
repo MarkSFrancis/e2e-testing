@@ -1,5 +1,5 @@
 # Angular E2E Testing
-This is a continually updated proof of concept and single source of truth for my own best practices when creating E2E and unit tests in Angular 6+.
+This is a proof of concept and style guide for my own best practices when creating E2E and unit tests in Angular 6+.
   
 In here, you can find unit testing and E2E testing samples, with smoke tests, auto-running unit tests via code watching, and best practice samples
 
