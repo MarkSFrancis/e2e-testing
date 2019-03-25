@@ -3,7 +3,7 @@ This is a proof of concept and style guide for my own best practices when creati
   
 In here, you can find unit testing and E2E testing samples, with smoke tests, auto-running unit tests via code watching, and best practice samples
 
-It uses tools like Jasmine, Protractor, Headless Chrome and Karma to power its testing suite. You'll find samples of tests for components, entire pages, object creation, forms and more across this application.
+It uses Jasmine, Protractor, Headless Chrome and Karma to power its testing suite. You'll find samples of tests for components, entire pages, object creation, forms and more across this application.
 
 #### Unit Tests
 These are quick, light and focused tests that only cover a single component. 
